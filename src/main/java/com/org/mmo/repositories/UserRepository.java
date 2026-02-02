@@ -9,7 +9,7 @@ import com.org.mmo.entities.UserEntity;
 @Repository
 public interface UserRepository extends JpaRepository<UserEntity, Integer> {
 
-	@Query("select coalesce(max(user_id), 0) from Users")
+	@Query(value = "select coalesce(max(user_id), 0) from users", nativeQuery = true)
 	public int findMaxIdOrZero();
 	
 }
