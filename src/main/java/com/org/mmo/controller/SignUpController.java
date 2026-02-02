@@ -1,5 +1,7 @@
 package com.org.mmo.controller;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,9 +26,14 @@ public class SignUpController {
 	
 	@PostMapping("/signUp")
 	public ResponseEntity<?> getUserDetails(@Valid @RequestBody SignUpDto signUpDto){
-		
-		
+		System.out.println("Entering getUserDetails in SignUpController");
+		try {
+		signUpDto = signUpService.getUserRegistered(signUpDto);
 		return ResponseEntity.status(HttpStatus.CREATED).body(Map.of("message", "User Successfully Registered "));
+	
+		}catch(Exception e) {
+			throw e;
+		}
 	}
 	
 }
