@@ -42,3 +42,20 @@ public class SignUpDto {
 	private int rewardPoints;
 	
 }
+
+/*
+ {
+  "userId": ,
+  "userType": "",
+  "firstName": "Vinit",
+  "middleName": "Jayanand",
+  "lastName": "Sharma",
+  "emailId": "vinits0804@gmail.com",
+  "passkey": "user@1234",
+  "contactNo": 123456789,
+  "address": "Athlone, Ireland",
+  "secQues": "",
+  "secAns": "",
+  "rewardPoints": 0
+}
+*/

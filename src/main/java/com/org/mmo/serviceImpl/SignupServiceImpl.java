@@ -30,6 +30,7 @@ public class SignupServiceImpl implements SignUpService{
 			int userId = idGenerator.generateUserId();
 			signUpDto.setUserId(userId);
 			UserEntity userEntity = SignUpMapper.getUserEntity(signUpDto);
+			userEntity.setUserType("CUST");
 			CustomerEntity custEntity = SignUpMapper.getCustEntity(signUpDto);
 			userEntity.setPasskey(PasswordEnc.getEncodedPassword(userEntity.getPasskey()));
 			userEntity = userRepo.save(userEntity);
