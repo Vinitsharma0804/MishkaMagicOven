@@ -12,4 +12,6 @@ public interface UserRepository extends JpaRepository<UserEntity, Integer> {
 	@Query(value = "select coalesce(max(user_id), 0) from users", nativeQuery = true)
 	public int findMaxIdOrZero();
 	
+	public UserEntity findByEmailId(String email);
+	
 }
